@@ -1,44 +1,6 @@
 import { useEffect, useState } from "react";
 
 const BillingComponent = ({ items, setItems }) => {
-  // const itemList = [
-  //     {id:1,
-  //     item: 'book',
-  //      quantity:1,
-  //      price:25.12,
-  //      type:'book',
-  //      imported: 'no'
-  //         },
-  //     {id:2,
-  //     item: 'chocolate box',
-  //         quantity:1,
-  //         price:10.12,
-  //         type:'food',
-  //         imported: 'no'
-  //     },
-  //      {id:3,
-  //         item: "novel",
-  //         quantity:1,
-  //         price:50,
-  //         type:'book',
-  //         imported: 'yes'
-  //     },
-  //     {id:4,
-  //     item: 'music cd',
-  //     quantity:1,
-  //     price:70,
-  //     type:'none',
-  //     imported: 'no'
-  //     },
-
-  // ];
-  // let itemDetails ={
-  //     itemName: item,
-  //     price:price,
-  //     type:type,
-  //     imported:imported
-  // }
-
   const addItems = (e) => {
     e.preventDefault();
 
@@ -59,11 +21,11 @@ const BillingComponent = ({ items, setItems }) => {
       <h1 className="text-3xl text-center mt-8">Billing Form</h1>
       <div className="m-8 w-full ">
         <form
-          className="w-full max-w-lg flex flex-row gap-4 text-center"
+          className=" max-w-lg flex flex-row gap-4 text-center"
           onSubmit={addItems}
         >
           <div className="gap-4 flex flex-row py-2">
-            <label className="py-2 flex flex-row" htmlFor="item">Item Name:</label>
+            <label className="py-2 flex flex-row" htmlFor="item">Item:</label>
             <input className="rounded" required name="item" type="text" />
           </div>
           <div className="gap-4 flex flex-row py-2">
@@ -87,11 +49,11 @@ const BillingComponent = ({ items, setItems }) => {
             </select>
           </div>
 
-          <input 
-            className="rounded bg-black text-white w-12"
-            type="submit"
-            value={"add"}
-          />
+          <button
+            className="bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+            ADD
+            </button>
         </form>
       </div>
       <h1 className="text-3xl text-center">Itmes Input</h1>

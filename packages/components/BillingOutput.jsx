@@ -27,11 +27,14 @@ const BillingOutput = ({ items }) => {
 
             finalTotal = finalTotal + parseFloat(elm.price) + importDuty + tax;
             salesTax = finalTotal - total;
+
+            
+              const finalPriceOfItem = parseFloat(elm.price) + importDuty + tax;
             return (
               <tr key={elm.index}>
                 <td className="border px-4 py-2">{elm.item}</td>
                 <td className="border px-4 py-2">
-                  {parseFloat(elm.price) + importDuty + tax}
+                  {finalPriceOfItem.toFixed(2)}
                 </td>
               </tr>
             );
@@ -39,7 +42,7 @@ const BillingOutput = ({ items }) => {
           <tr>
             <td>
               {" "}
-              Total : {finalTotal}
+              Total : {finalTotal.toFixed(2)}
               {" &"}{" "}
             </td>
             <td> Sales Tax : {salesTax.toFixed(2)}</td>
