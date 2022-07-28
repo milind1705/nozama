@@ -13,15 +13,18 @@ const BillingComponent = ({ items, setItems }) => {
         imported: e.target.imported.value,
       },
     ]);
-    e.target.value =''
+    e.target.item.value =''
+    e.target.price.value =''
+    e.target.types.value =''
+    e.target.imported.value =''
   };
 
   return (
-    <div className="pl-24">
+    <div className="mt-12">
       <h1 className="text-3xl text-center mt-8">Billing Form</h1>
-      <div className="m-8 w-full ">
+      <div className="ml-60 my-20">
         <form
-          className=" max-w-lg flex flex-row gap-4 text-center"
+          className=" max-w-lg flex flex-row gap-4 text-center "
           onSubmit={addItems}
         >
           <div className="gap-4 flex flex-row py-2">
@@ -35,13 +38,13 @@ const BillingComponent = ({ items, setItems }) => {
           <div className="gap-4 flex flex-row py-2">
             <label className="py-2" htmlFor="type">Type:</label>
             <select className="rounded" name="types" id="" required>
-              <option value="none">Non</option>
+              <option value="none">None</option>
               <option value="food">Food</option>
               <option value="medicle">Medicle Poducts</option>
               <option value="book">Book</option>
             </select>
           </div>
-          <div className="gap-4 flex flex-row py-2">
+          <div className="gap-4 flex flex-row py-2 ">
             <label className="py-2" htmlFor="type">Imported:</label>
             <select className="rounded" name="imported" id="" required>
               <option value="no">No</option>
@@ -57,7 +60,7 @@ const BillingComponent = ({ items, setItems }) => {
         </form>
       </div>
       <h1 className="text-3xl text-center">Itmes Input</h1>
-      <div className="w-full px text-center">
+      <div className="w-full px flex justify-center">
         <table className="table-auto">
           <thead>
             <tr>
@@ -67,10 +70,11 @@ const BillingComponent = ({ items, setItems }) => {
           </thead>
           <tbody>
             {items?.map((elm) => {
+              let price = elm.price
               return (
                 <tr key={elm.index}>
                   <td className="border px-4 py-2">{elm.item}</td>
-                  <td className="border px-4 py-2">{elm.price}</td>
+                  <td className="border px-4 py-2">{price.toFixed(2)}</td>
                 </tr>
               );
             })}

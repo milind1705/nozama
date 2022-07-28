@@ -4,8 +4,10 @@ const BillingOutput = ({ items }) => {
   let salesTax = 0;
 
   return (
-    <div className="ml-24">
+    <div className="mt-16 ">
       <h1 className="text-3xl text-center">Itmes Output</h1>
+      <div className="flex justify-center">
+
       <table className="table-auto">
         <thead>
           <tr>
@@ -49,6 +51,7 @@ const BillingOutput = ({ items }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

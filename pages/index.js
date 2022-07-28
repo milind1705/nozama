@@ -6,11 +6,10 @@ import BillingComponent from '../packages/components/BillingComponent'
 import BillingOutput from '../packages/components/BillingOutput'
 export default function Home() {
   const [items, setItems] = useState([])
-  console.log(items)
   return (
-    <div className=' h-full w-full' >
+    <div className=' h-screen w-full bg-gray-500' >
     <div className='w-full text-center mt-8'>
-      <h1 className='text-green text-7xl'>NOZOMA</h1>
+      <h1 className='text-green text-7xl'>NOZAMA</h1>
     </div>
      <BillingComponent items={items} setItems={setItems}/>
      <BillingOutput items={items}/>
